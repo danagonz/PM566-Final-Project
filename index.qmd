@@ -1,5 +1,5 @@
 ---
-title: "PM566 Final Project/Lab 12 Website"
+title: "PM566 Final Project/Lab 12 Example Website"
 ---
 
 This is my website for my PM 566 Final Project.
