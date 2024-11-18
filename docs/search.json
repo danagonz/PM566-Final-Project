@@ -12,5 +12,12 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "PM 566 Final Project Written Report.html",
+    "href": "PM 566 Final Project Written Report.html",
+    "title": "PM 566 Final Written Report",
+    "section": "",
+    "text": "The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown\n\nIntroduction\nHepatitis C virus (HCV) infection is the most common blood-borne infection in the United States. National surveillance data has shown a significant rise in acute HCV cases (those in the first 6 months of infection) in the last decade, with case counts having nearly doubled.\nIn this assignment, I will visualize trends in HCV incidence rate for the racial/ethnic groups included in my chosen dataset, and determine which group(s) have seen the greatest rise in incidence for the time period of interest by calculating the percent change in incidence from 2000 to 2022.\nThis dataset includes the following five variables:\n\n“Indicator” (“Acute Viral Hepatitis C” for all observations)\n“Year” (2000-2022)\n“Race.Ethnicity”\n\n“American Indian/Alaska Native”\n“Asian/Pacific Islander”\n“Black/African American”\n“Hispanic/Latino”\n“White”\n“Other”\n“Unknown”\n\n“Cases” (crude case counts)\n“Rate.per.100.000” (incidence rate)\n\nIntroduction: provide background on your dataset and formulated question) Methods: include how and where the data were acquired, how you cleaned and wrangled the data, what tools you used for data exploration Results: provide final, publication-ready tables and figures from your analysis, make separate subsections as needed Conclusion and Summary: a brief recap where you describe your findings."
   }
 ]
