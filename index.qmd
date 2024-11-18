@@ -1,11 +1,8 @@
 ---
-title: "PM566 Final Project Website"
+title: "PM566 Final Project/Lab 12 Website"
 ---
 
-This is a Quarto website.
+This is my website for my PM 566 Final Project.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This website is also being used for Lab 12.
 
-```{r}
-1 + 1
-```
