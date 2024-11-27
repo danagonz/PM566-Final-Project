@@ -1,7 +1,6 @@
 ---
 title: "The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown"
 author: "Dana Gonzalez"
-format: pdf
 output: pdf
 editor: visual
 embed-resources: true
