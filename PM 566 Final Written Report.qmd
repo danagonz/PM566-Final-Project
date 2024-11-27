@@ -48,7 +48,7 @@ Due to the asymptomatic nature of acute HCV, the true burden of this disease is 
 **For additional reference (will not be included in my analysis), I will visualize trends in incidence rates across the following to gain greater insight into the disease landscape:**
 
 -   **Geographic Location (2022):**
-    -   50 U.S. States (**Visualization only included on website due to incompatibility of plotly with PDF outputs**)
+    -   50 U.S. States (**Visualization only included on website due to incompatibility of plotly with PDFs**)
 -   **Urbanicity (2018-2022):**
     -   Urban
     -   Rural
@@ -71,6 +71,7 @@ Data was downloaded from their respective sources and loaded into R as CSVs. Aft
     -   Change "group" variable from a character to a factor variable type
     -   Change "year" and "incidence" variables from character to numeric variable types
 -   **State Data**:
+    -   **Again, visualization only included on website due to incompatibility of plotly with PDF outputs**
     -   Remove "Range" variable (analysis limited to incidence rates)
     -   Remove "District of Columbia" data (for easier analysis using "plotly" package)
     -   Remaining variables renamed for easier recall (i.e., "Cases.100000.Population" to "incidence")
