@@ -1,5 +1,5 @@
 ---
-title: "PM566 Final Project"
+title: "PM 566 Final Project"
 author: "Dana Gonzalez"
 ---
 
@@ -8,5 +8,7 @@ author: "Dana Gonzalez"
 This project is a brief analysis of the rises in incidence of acute hepatitis C virus (HCV) across key demographics (namely race/ethnicity, age, and sex) in the United States from 2000 to 2022.
 
 Please refer to the "Full Report" tab, or the following link to view the full report: (INSERT LINK HERE)
+
+# The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown
 
 

@@ -4,7 +4,7 @@ author: "Dana Gonzalez"
 format: html
 editor: visual
 embed-resources: true
-theme: flatly
+theme: cosmo
 ---
 
 # Introduction
