@@ -67,6 +67,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -117,7 +126,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown" id="toc-the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown" class="nav-link active" data-scroll-target="#the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown">The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown</a></li>
+  <li><a href="#the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown" id="toc-the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown" class="nav-link active" data-scroll-target="#the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown">The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -154,8 +168,31 @@ ul.task-list li input[type="checkbox"] {
 <p>Please refer to the “Full Report” tab, or the following link to view the full report: (INSERT LINK HERE)</p>
 <section id="the-evolving-landscape-of-acute-hepatitis-c-in-the-united-states-a-demographic-breakdown" class="level1">
 <h1>The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown</h1>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>Hepatitis C virus (HCV) infection is the most common blood-borne infection in the United States. National surveillance data has shown a significant rise in acute HCV cases (those in the first 6 months of infection) in the last decade, with case counts having nearly doubled. The majority of acute cases (&gt;50%) will develop into chronic hepatitis C, which can lead to complications like liver disease, liver cancer, liver failure, or even death (Centers for Disease Control and Prevention [CDC], 2024).</p>
+<p>Due to the asymptomatic nature of acute HCV, the true burden of this disease is grossly underestimated. For this reason, it is critical that current at-risk populations are promptly identified to more effectively target public health interventions to connect at-risk and diseased individuals with appropriate preventative, diagnostic, and therapeutic care.</p>
+<p><strong>For this reason, I will work to visualize trends in acute HCV incidence across the above-mentioned demographic groups for the period 2000-2022 and determine which group(s) within each demographic factor have seen the greatest rise in incidence for the period of interest.</strong></p>
+<p><strong>I will evaluate rises in incidence by fitting linear models to plots of each group and examine each subgroup’s slope-intercept equation. I will interpret the group(s) with the greatest positive slope as having the greatest rise in incidence for the period of interest.</strong></p>
+</section>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
+<p>All data for this project was retrieved from the Centers for Disease Control and Prevention’s (CDC) National Center for HIV, Viral Hepatitis, STD, and Tuberculosis Prevention (NCHHSTP).</p>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<section id="yearly-incidence-per-100000-by-raceethnicity-2000-2022" class="level4">
+<h4 class="anchored" data-anchor-id="yearly-incidence-per-100000-by-raceethnicity-2000-2022">Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1e630483f4f2b29b0f7e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1e630483f4f2b29b0f7e">{"x":{"visdat":{"2445cc75e6a":["function () ","plotlyVisDat"]},"cur_data":"2445cc75e6a","attrs":{"2445cc75e6a":{"x":{},"y":{},"mode":"lines","line":{"width":4},"color":{},"colors":["#ff9796","#db626a","#a91741","#670b34","#44302a"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"year"},"yaxis":{"domain":[0,1],"automargin":true,"title":"incidence"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[0.69999999999999996,0.69999999999999996,0.69999999999999996,0.40000000000000002,0.69999999999999996,0.29999999999999999,0.69999999999999996,0.59999999999999998,0.80000000000000004,0.59999999999999998,1,1.1000000000000001,2,1.7,1.3,1.8,3.7000000000000002,3,3.6000000000000001,3.6000000000000001,2.1000000000000001,2.7000000000000002,2.8999999999999999],"mode":"lines","line":{"color":"rgba(255,151,150,1)","width":4},"type":"scatter","name":"American Indian/Alaska Native","marker":{"color":"rgba(255,151,150,1)","line":{"color":"rgba(255,151,150,1)"}},"textfont":{"color":"rgba(255,151,150,1)"},"error_y":{"color":"rgba(255,151,150,1)"},"error_x":{"color":"rgba(255,151,150,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0,0.10000000000000001,0,0,0,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.40000000000000002,0.29999999999999999,0.29999999999999999],"mode":"lines","line":{"color":"rgba(219,98,106,1)","width":4},"type":"scatter","name":"Asian/Pacific Islander","marker":{"color":"rgba(219,98,106,1)","line":{"color":"rgba(219,98,106,1)"}},"textfont":{"color":"rgba(219,98,106,1)"},"error_y":{"color":"rgba(219,98,106,1)"},"error_x":{"color":"rgba(219,98,106,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[1.3,0.69999999999999996,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.29999999999999999,0.5,0.5,0.59999999999999998,0.69999999999999996,1.1000000000000001,1.3999999999999999,1.5],"mode":"lines","line":{"color":"rgba(169,23,65,1)","width":4},"type":"scatter","name":"Black/African American","marker":{"color":"rgba(169,23,65,1)","line":{"color":"rgba(169,23,65,1)"}},"textfont":{"color":"rgba(169,23,65,1)"},"error_y":{"color":"rgba(169,23,65,1)"},"error_x":{"color":"rgba(169,23,65,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[0.40000000000000002,0.40000000000000002,0.29999999999999999,0.20000000000000001,0.10000000000000001,0.20000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.10000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.29999999999999999,0.5,0.40000000000000002,0.5,0.59999999999999998,0.69999999999999996,0.90000000000000002,1],"mode":"lines","line":{"color":"rgba(103,11,52,1)","width":4},"type":"scatter","name":"Hispanic/Latino","marker":{"color":"rgba(103,11,52,1)","line":{"color":"rgba(103,11,52,1)"}},"textfont":{"color":"rgba(103,11,52,1)"},"error_y":{"color":"rgba(103,11,52,1)"},"error_x":{"color":"rgba(103,11,52,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],"y":[0.59999999999999998,0.40000000000000002,0.29999999999999999,0.29999999999999999,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.29999999999999999,0.29999999999999999,0.29999999999999999,0.5,0.59999999999999998,0.80000000000000004,0.80000000000000004,0.90000000000000002,1.5,1.2,1.3,1.3999999999999999,1.6000000000000001,1.6000000000000001,1.5],"mode":"lines","line":{"color":"rgba(68,48,42,1)","width":4},"type":"scatter","name":"White","marker":{"color":"rgba(68,48,42,1)","line":{"color":"rgba(68,48,42,1)"}},"textfont":{"color":"rgba(68,48,42,1)"},"error_y":{"color":"rgba(68,48,42,1)"},"error_x":{"color":"rgba(68,48,42,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

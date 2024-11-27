@@ -19,7 +19,7 @@ This shift in the disease landscape is largely driven by the United States' ongo
 
 Due to the asymptomatic nature of acute HCV, the true burden of this disease is grossly underestimated. For this reason, it is critical that current at-risk populations are promptly identified to more effectively target public health interventions to connect at-risk and diseased individuals with appropriate preventative, diagnostic, and therapeutic care.
 
-**For this reason, I will work to visualize trends in acute HCV incidence across the following demographic groups for the period 2000-2022 and determine which group(s) have seen the greatest rise in incidence for the period of interest.**
+**For this reason, I will work to visualize trends in acute HCV incidence across the following demographic groups for the period 2000-2022 and determine which group(s) within each demographic factor have seen the greatest rise in incidence for the period of interest.**
 
 **I will evaluate rises in incidence by fitting linear models to plots of each group and examine each subgroup's slope-intercept equation. I will interpret the group(s) with the greatest positive slope as having the greatest rise in incidence for the period of interest.**
 

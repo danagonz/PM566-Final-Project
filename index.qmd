@@ -11,4 +11,158 @@ Please refer to the "Full Report" tab, or the following link to view the full re
 
 # The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown
 
+### Introduction
+
+Hepatitis C virus (HCV) infection is the most common blood-borne infection in the United States. National surveillance data has shown a significant rise in acute HCV cases (those in the first 6 months of infection) in the last decade, with case counts having nearly doubled. The majority of acute cases (\>50%) will develop into chronic hepatitis C, which can lead to complications like liver disease, liver cancer, liver failure, or even death (Centers for Disease Control and Prevention \[CDC\], 2024).
+
+Due to the asymptomatic nature of acute HCV, the true burden of this disease is grossly underestimated. For this reason, it is critical that current at-risk populations are promptly identified to more effectively target public health interventions to connect at-risk and diseased individuals with appropriate preventative, diagnostic, and therapeutic care.
+
+**For this reason, I will work to visualize trends in acute HCV incidence across the above-mentioned demographic groups for the period 2000-2022 and determine which group(s) within each demographic factor have seen the greatest rise in incidence for the period of interest.**
+
+**I will evaluate rises in incidence by fitting linear models to plots of each group and examine each subgroup's slope-intercept equation. I will interpret the group(s) with the greatest positive slope as having the greatest rise in incidence for the period of interest.**
+
+### Methods
+
+All data for this project was retrieved from the Centers for Disease Control and Prevention's (CDC) National Center for HIV, Viral Hepatitis, STD, and Tuberculosis Prevention (NCHHSTP).
+
+### Results
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# Load Libraries
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(devtools)
+library(MoMAColors)
+library(plotly)
+library(zoo)
+library(tidyr)
+```
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# Read in Data
+estimated <- read.table("~/Downloads/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("~/Downloads/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("~/Downloads/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("~/Downloads/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("~/Downloads/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("~/Downloads/Urbanicity_Data.csv", header = TRUE, sep = ",")
+```
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# Load Libraries
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(devtools)
+library(MoMAColors)
+library(plotly)
+library(zoo)
+library(tidyr)
+```
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# Read in Data
+estimated <- read.table("~/Downloads/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("~/Downloads/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("~/Downloads/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("~/Downloads/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("~/Downloads/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("~/Downloads/Urbanicity_Data.csv", header = TRUE, sep = ",")
+```
+
+```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# Clean and Wrangle Data
+## Race
+race <- race |>
+  select(-Indicator)
+race <- race |>
+  select(-Cases)
+race <- race[!(race$Race.Ethnicity %in% c("Other", "Unknown")), ]
+race <- race |>
+  rename(
+    year = Year,
+    group = Race.Ethnicity,
+    incidence = Rate.per.100000)
+race$group <- as.factor(race$group)
+race$year <- gsub("\\(COVID-19 Pandemic\\)", "", race$year)
+race$year <- as.numeric(race$year)
+race$incidence <- gsub("[^0-9.]", "", race$incidence)
+race$incidence <- as.numeric(race$incidence)
+
+## Age
+age <- age |>
+  select(-Indicator)
+age <- age |>
+  select(-Cases)
+age <- age |>
+  rename(
+    year = Year,
+    group = Age.Group,
+    incidence = Rate.per.100000)
+age$group <- as.factor(age$group)
+age$year <- gsub("\\(COVID-19 Pandemic\\)", "", age$year)
+age$year <- as.numeric(age$year)
+age$incidence <- gsub("[^0-9.]", "", age$incidence)
+age$incidence <- as.numeric(age$incidence)
+
+## Sex
+sex <- sex |>
+  select(-Indicator)
+sex <- sex |>
+  select(-Cases)
+sex <- sex |>
+  rename(
+    year = Year,
+    group = Sex,
+    incidence = Rate.per.100000)
+sex$group <- as.factor(sex$group)
+sex$year <- gsub("\\(COVID-19 Pandemic\\)", "", sex$year)
+sex$year <- as.numeric(sex$year)
+sex$incidence <- gsub("[^0-9.]", "", sex$incidence)
+sex$incidence <- as.numeric(sex$incidence)
+
+## State
+state <- state |>
+  select(-Range)
+state <- state |>
+  filter(State.or.jurisdiction != "District of Columbia")
+state <- state |>
+  rename(
+    abbreviation = State,
+    state = State.or.jurisdiction,
+    incidence = Cases.100.000.population)
+state$state <- as.factor(state$state)
+state$incidence <- gsub("[^0-9.]", "", state$incidence)
+state$incidence <- as.numeric(state$incidence)
+
+## Urbanicity
+urbanicity <- urbanicity |>
+  rename(
+    year = Year,
+    area = Area,
+    incidence = Incidence)
+urbanicity$area <- as.factor(urbanicity$area)
+urbanicity$year <- as.numeric(urbanicity$year)
+urbanicity$incidence <- gsub("[^0-9.]", "", urbanicity$incidence)
+urbanicity$incidence <- as.numeric(urbanicity$incidence)
+```
+
+
+#### Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
+
+```{r, echo=FALSE}
+# Interactive Lineplot of Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
+plot_ly(race, 
+        x = ~year, 
+        y = ~incidence, 
+        color = ~group, 
+        type = "scatter", 
+        mode = "lines", 
+        line = list(width = 4),
+        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#44302a"))
+```
+
 
