@@ -3,7 +3,7 @@ title: "PM 566 Final Project"
 author: "Dana Gonzalez"
 ---
 
-**Welcome to Dana Gonzalez's Final Project site for PM 566: Introduction to Health Data Science at USC**
+**Welcome to Dana Gonzalez's Final Project site for PM 566: Introduction to Health Data Science**
 
 This project is a brief analysis of the rises in incidence of acute hepatitis C virus (HCV) across key demographics (namely race/ethnicity, age, and sex) in the United States from 2000 to 2022.
 
