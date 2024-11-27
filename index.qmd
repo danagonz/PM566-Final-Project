@@ -202,4 +202,38 @@ plot_ly(sex,
     yaxis = list(title = "Incidence Rate"))
 ```
 
-#### Conclusion
+#### **Incidence Rates by U.S. State (2022)**
+
+**Note:** States with incidence rates of "-1" did not have data available for 2022. They were coded as such to allow for display in Figure 5.
+
+```{r, echo=FALSE, fig.width= 9, fig.height=6, message=FALSE, warning=FALSE}
+# Map of Incidence Rate by US State
+state$incidence[is.na(state$incidence)] <- -1
+shadeLimit <- max(state$incidence[state$incidence != -1], na.rm = TRUE)
+state_map <- plot_geo(state, locationmode = 'USA-states') |> 
+  add_trace(
+    z = ~incidence, 
+    text = ~state, 
+    locations = ~abbreviation,
+    color = ~incidence, 
+    colorscale = list(
+      list(0, "white"),
+      list(0.01, "#ff9796"),
+      list(1, "#a91741")),
+    showscale = TRUE) |> 
+  layout(
+    geo = list(
+      scope = 'usa', 
+      projection = list(type = 'albers usa'),
+      center = list(lon = -98.5, lat = 39.8),
+      showland = TRUE,
+      landcolor = "white",
+      subunitwidth = 1,
+      countrywidth = 2),
+    colorbar = list(
+      title = "Incidence (per 100,000)",
+      limits = c(0, shadeLimit)))
+
+state_map
+```
+
