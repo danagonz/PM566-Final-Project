@@ -1,5 +1,5 @@
 ---
-title: "PM 566 Final Written Report"
+title: "The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown"
 author: "Dana Gonzalez"
 format: pdf
 output: pdf
