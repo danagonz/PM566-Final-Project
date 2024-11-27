@@ -151,9 +151,9 @@ urbanicity$incidence <- as.numeric(urbanicity$incidence)
 ```
 
 
-#### Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
+#### **Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)**
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, fig.width=9, fig.height=6}
 # Interactive Lineplot of Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
 plot_ly(race, 
         x = ~year, 
@@ -162,7 +162,43 @@ plot_ly(race,
         type = "scatter", 
         mode = "lines", 
         line = list(width = 4),
-        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#44302a"))
+        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#44302a")) |>
+  layout(
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Incidence Rate"))
 ```
 
+#### **Yearly Incidence (per 100,000) by Age Group (2000-2022)**
+
+```{r, echo=FALSE, fig.width=9, fig.height=6}
+# Interactive Lineplot of Yearly Incidence (per 100,000) by Age Group (2000-2022)
+plot_ly(age, 
+        x = ~year, 
+        y = ~incidence, 
+        color = ~group, 
+        type = "scatter", 
+        mode = "lines", 
+        line = list(width = 4),
+        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#625856","#44302a", "#090707")) |>
+  layout(
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Incidence Rate"))
+```
+
+#### **Yearly Incidence (per 100,000) by Sex (2000-2022)**
+
+```{r, echo=FALSE, fig.width=9, fig.height=6}
+# Interactive Lineplot of Yearly Incidence (per 100,000) by Sex (2000-2022)
+plot_ly(sex, 
+        x = ~year, 
+        y = ~incidence, 
+        color = ~group, 
+        type = "scatter", 
+        mode = "lines", 
+        line = list(width = 4),
+        colors = c("#ff9796", "#a91741")) |>
+  layout(
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Incidence Rate"))
+```
 
