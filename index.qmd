@@ -1,8 +1,12 @@
 ---
-title: "PM566 Final Project/Lab 12 Example Website"
+title: "PM566 Final Project"
+author: "Dana Gonzalez"
 ---
 
-This is my website for my PM 566 Final Project.
+**Welcome to Dana Gonzalez's Final Project site for PM 566: Introduction to Health Data Science**
 
-This website is also being used for Lab 12.
+This project is a brief analysis of the rises in incidence of acute hepatitis C virus (HCV) across key demographics (namely race/ethnicity, age, and sex) in the United States from 2000 to 2022.
+
+Please refer to the "Full Report" tab, or the following link to view the full report: (INSERT LINK HERE)
+
 

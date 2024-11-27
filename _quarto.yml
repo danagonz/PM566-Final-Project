@@ -8,8 +8,11 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - href: about.qmd
+        text: About
+      - href: PM 566 Final Project Written Report.qmd
+        text: Full Report
+        
 format:
   html:
     theme: cosmo
