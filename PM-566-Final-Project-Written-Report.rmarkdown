@@ -1,12 +1,14 @@
 ---
 title: "The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown"
 author: "Dana Gonzalez"
-format: pdf
 output: pdf
 editor: visual
 embed-resources: true
 theme: cosmo
 ---
+
+
+
 
 # Introduction
 
@@ -84,6 +86,9 @@ Data was downloaded from their respective sources and loaded into R as CSVs. Aft
 Finally, I manually inspected each dataset by using R's str() function to confirm my edits were successful.
 
 Linear models were fitted using R's "lm()" function. Slope-intercept equations were then displayed using the "kable()" function.
+
+
+
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Load Libraries
@@ -194,9 +199,15 @@ str(state)
 str(urbanicity)
 ```
 
+
+
+
 # Results
 
 ### Figure 1. Stacked Barchart of Reported vs. Estimated Cases of Acute HCV (2015-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Reported vs. Estimated Cases of Acute HCV (2015-2022)
@@ -229,11 +240,17 @@ ggplot(estimated, aes(x = Year)) +
   guides(fill = guide_legend(title = "Fill"))
 ```
 
+
+
+
 Although I am not directly utilizing the following data for this project, I wanted to briefly include it to emphasize the need to identify at-risk groups for HCV infection. As previously stated, true HCV incidence is severely underreported due to the asymptomatic nature of this disease. Identifying key at-risk groups will allow public health officials to implement more effective public health interventions and screening efforts for better disease surveillance.
 
 As seen in Figure 1 above, there is a clear and stark difference in the volume of estimated and reported cases of acute HCV for each year. According to recent modeling, the CDC estimates that 12.3 cases of HCV occur for every case reported in national surveillance (Klevens et al., 2014).
 
 ### Figure 2a. Lineplot of Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Plot Yearly Incidence Rates by Racial/Ethnic Group
@@ -254,7 +271,13 @@ ggplot(data = race) +
         legend.text = element_text(size = 9))  
 ```
 
+
+
+
 ### Figure 2b. Faceted Lineplot of Yearly Incidence (per 100,000) by Race/Ethnicity (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 race_slope <- race |>
@@ -286,7 +309,13 @@ race|>
     legend.text = element_text(size = 12))
 ```
 
+
+
+
 ### Table 1. Linear Regression Equations for Incidence Rates (per 100,000) by Race/Ethnicity (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Display Linear Regression Equations
@@ -300,7 +329,13 @@ kable(race_slope,
   column_spec(2, width = "6cm")
 ```
 
+
+
+
 ### Figure 3a. Lineplot of Yearly Incidence (per 100,000) by Age (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Plot Yearly Incidence Rates by Age Group
@@ -329,7 +364,13 @@ ggplot(data = age) +
         legend.text = element_text(size = 9))  
 ```
 
+
+
+
 ### Figure 3b. Faceted Lineplot of Yearly Incidence (per 100,000) by Age (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 age_slope <- age |>
@@ -361,7 +402,13 @@ age|>
     legend.text = element_text(size = 12))
 ```
 
+
+
+
 ### Table 2. Linear Regression Equations for Incidence Rates (per 100,000) by Age (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Display Linear Regression Equations
@@ -375,7 +422,13 @@ kable(age_slope,
   column_spec(2, width = "6cm")
 ```
 
+
+
+
 ### Figure 4a. Lineplot of Yearly Incidence (per 100,000) by Sex (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Plot Yearly Incidence Rates by Sex
@@ -396,7 +449,13 @@ ggplot(data = sex) +
         legend.text = element_text(size = 9)) 
 ```
 
+
+
+
 ### Figure 4b. Faceted Lineplot of Yearly Incidence (per 100,000) by Sex (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 sex_slope <- sex |>
@@ -428,7 +487,13 @@ sex|>
     legend.text = element_text(size = 12))
 ```
 
+
+
+
 ### Table 3. Linear Regression Equations for Incidence Rates (per 100,000) by Sex (2000-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.width=6, message=FALSE, warning=FALSE}
 # Display Linear Regression Equations
@@ -442,7 +507,13 @@ kable(sex_slope,
   column_spec(2, width = "6cm")
 ```
 
+
+
+
 ### Figure 5a. Lineplot of Yearly Incidence (per 100,000) by Urbanicity (2018-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Plot Yearly Incidence (per 100,000) By Urbanicity (2018-2022)
@@ -463,7 +534,13 @@ ggplot(data = urbanicity) +
         legend.text = element_text(size = 9)) 
 ```
 
+
+
+
 ### Figure 5b. Faceted Lineplot of Yearly Incidence (per 100,000) by Urbanicity (2018-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 urbanicity_slope <- urbanicity |>
@@ -495,7 +572,13 @@ urbanicity|>
     legend.text = element_text(size = 12))
 ```
 
+
+
+
 ### Table 4. Linear Regression Equations for Incidence Rates (per 100,000) by Urbanicity (2018-2022)
+
+
+
 
 ```{r, echo=FALSE, fig.width=9, fig.height=6, message=FALSE, warning=FALSE}
 # Display Linear Regression Equations
@@ -508,6 +591,9 @@ kable(urbanicity_slope,
   column_spec(1, width = "4cm") |>
   column_spec(2, width = "6cm")
 ```
+
+
+
 
 # Conclusion and Summary
 
@@ -536,3 +622,4 @@ Although incidence rates, as well as rises in incidence, have been greater for m
 3.  Jeong, D., Wong, S., Karim, M. E., Manges, A. R., Makuza, J. D., Bartlett, S. R., Velásquez García, H. A., Luster, D., Adu, P. A., Binka, M., Yu, A., Krajden, M., & Janjua, N. Z. (2024). Treatment of HCV with direct-acting antivirals on reducing mortality related to extrahepatic manifestations: a large population-based study in British Columbia, Canada. The Lancet Regional Health - Americas, 29, 100658. https://doi.org/10.1016/j.lana.2023.100658
 4.  Klevens, R. M., Liu, S., Roberts, H., Jiles, R. B., & Holmberg, S. D. (2014). Estimating Acute Viral Hepatitis Infections From Nationally Reported Cases. American Journal of Public Health, 104(3), 482–487. https://doi.org/10.2105/AJPH.2013.301601
 5.  Rose, M., Allen Myers, J., Ryan, N., Prince, A., Talbot, M., & Espinosa, C. M. (2019). Hepatitis C is now a Millennial Disease in Response to the Opioid Crisis: A Demographic Shift in Hepatitis C Infection. Open Forum Infectious Diseases, 6(Supplement_2), S159–S159. https://doi.org/10.1093/ofid/ofz360.368
+

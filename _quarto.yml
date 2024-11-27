@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: PM 566 Final Project Written Report.qmd
+      - href: PM 566 Final Written Report.qmd
         text: Full Report
         
 format:
