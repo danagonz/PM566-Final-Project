@@ -71,7 +71,7 @@ Data was downloaded from their respective sources and loaded into R as CSVs. Aft
     -   Change "group" variable from a character to a factor variable type
     -   Change "year" and "incidence" variables from character to numeric variable types
 -   **State Data**:
-    -   **Again, visualization only included on website due to incompatibility of plotly with PDF outputs**
+    -   **Again, this visualization was only included on my website due to the incompatibility of plotly with PDFs**
     -   Remove "Range" variable (analysis limited to incidence rates)
     -   Remove "District of Columbia" data (for easier analysis using "plotly" package)
     -   Remaining variables renamed for easier recall (i.e., "Cases.100000.Population" to "incidence")
@@ -323,7 +323,7 @@ ggplot(data = age) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
         axis.title.y = element_text(face = "bold"),
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.text.x = element_text(vjust = 0.5),
         legend.position = "bottom",
         legend.box = "horizontal",
         legend.title = element_text(size = 9, face = "bold"),
@@ -390,7 +390,7 @@ ggplot(data = sex) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
         axis.title.y = element_text(face = "bold"),
-        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        axis.text.x = element_text(vjust = 0.5),
         legend.position = "bottom",
         legend.box = "horizontal",
         legend.title = element_text(size = 9, face = "bold"),
