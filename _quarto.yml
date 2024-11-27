@@ -8,6 +8,9 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: PM 566 Final Written Report.qmd
+        text: Full Report
+        
 format:
   html:
     theme: cosmo
