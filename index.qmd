@@ -3,11 +3,11 @@ title: "PM 566 Final Project"
 author: "Dana Gonzalez"
 ---
 
-**Welcome to Dana Gonzalez's Final Project site for PM 566: Introduction to Health Data Science**
+**Welcome to Dana Gonzalez's Final Project site for PM 566: Introduction to Health Data Science at USC**
 
 This project is a brief analysis of the rises in incidence of acute hepatitis C virus (HCV) across key demographics (namely race/ethnicity, age, and sex) in the United States from 2000 to 2022.
 
-Please refer to the following link to view the full report with my complete analysis: [Download Report](https://github.com/danagonz/PM566-Final-Project/blob/1e157f918f3d900b85751f65d0b6f1a3e897a4c6/PM-566-Final-Written-Report.pdf).
+Please refer to the following link to view the full report with my complete analysis: [Download Report](https://github.com/danagonz/PM566-Final-Project/blob/2abbad1cbf5ea2e23a9e522ad6f01e9cb3e4131c/docs/PM-566-Final-Written-Report.pdf).
 
 # The Evolving Landscape of Acute Hepatitis C in the United States: A Demographic Breakdown
 
@@ -19,11 +19,11 @@ Due to the asymptomatic nature of acute HCV, the true burden of this disease is 
 
 **For this reason, I will work to visualize trends in acute HCV incidence across the above-mentioned demographic groups for the period 2000-2022 and determine which group(s) within each demographic factor have seen the greatest rise in incidence for the period of interest.**
 
-**I will evaluate rises in incidence by fitting linear models to plots of each group and examine each subgroup's slope-intercept equation. I will interpret the group(s) with the greatest positive slope as having the greatest rise in incidence for the period of interest.**
+**I will evaluate rises in incidence by fitting linear models to plots of each group and examine each subgroup's slope-intercept equation. I will interpret the group(s) with the greatest positive slope (i.e., greatest increase in annual incidence per year) as having the greatest rise in incidence for the period of interest.**
 
 ### Methods
 
-All data for this project was retrieved from the Centers for Disease Control and Prevention's (CDC) National Center for HIV, Viral Hepatitis, STD, and Tuberculosis Prevention (NCHHSTP).
+All data for this project was retrieved from the Centers for Disease Control and Prevention's (CDC) National Center for HIV, Viral Hepatitis, STD, and Tuberculosis Prevention (NCHHSTP). The data files (.csv) for this project are available for download via the following link: [Download Files](https://github.com/danagonz/PM566-Final-Project/tree/2abbad1cbf5ea2e23a9e522ad6f01e9cb3e4131c/Data).
 
 ### Results
 
@@ -42,12 +42,12 @@ library(tidyr)
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Read in Data
-estimated <- read.table("~/Downloads/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
-race <- read.table("~/Downloads/Race_Data.csv", header = TRUE, sep = ",")
-age <- read.table("~/Downloads/Age_Data.csv", header = TRUE, sep = ",")
-sex <- read.table("~/Downloads/Sex_Data.csv", header = TRUE, sep = ",")
-state <- read.table("~/Downloads/2022_State_Rates.csv", header = TRUE, sep = ",")
-urbanicity <- read.table("~/Downloads/Urbanicity_Data.csv", header = TRUE, sep = ",")
+estimated <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Urbanicity_Data.csv", header = TRUE, sep = ",")
 ```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -65,12 +65,12 @@ library(tidyr)
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Read in Data
-estimated <- read.table("~/Downloads/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
-race <- read.table("~/Downloads/Race_Data.csv", header = TRUE, sep = ",")
-age <- read.table("~/Downloads/Age_Data.csv", header = TRUE, sep = ",")
-sex <- read.table("~/Downloads/Sex_Data.csv", header = TRUE, sep = ",")
-state <- read.table("~/Downloads/2022_State_Rates.csv", header = TRUE, sep = ",")
-urbanicity <- read.table("~/Downloads/Urbanicity_Data.csv", header = TRUE, sep = ",")
+estimated <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Urbanicity_Data.csv", header = TRUE, sep = ",")
 ```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -162,11 +162,15 @@ plot_ly(race,
         type = "scatter", 
         mode = "lines", 
         line = list(width = 4),
-        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#44302a")) |>
+        colors = c("#d2916f", "#e9c09e", "#c0bd51", "#7f9041", "#598398")) |>
   layout(
     xaxis = list(title = "Year"),
     yaxis = list(title = "Incidence Rate"))
 ```
+
+The above figure displays annual incidence rates (new cases per 100,000 individuals in the population) for acute HCV in the United States between 2000-2022 across racial/ethnic groups. Following a decrease in annual incidence from 2000 to 2005, all groups have experienced a steady increase in rates from that point onwards. Of the five groups included in this project, the American Indian/Alaska Native (AI/AN) group has consistently had the greatest incidence rates of any racial/ethnic group, with rates nearly double that of the next highest group (White) in 2022.
+
+Analysis of overall change in incidence rates can be found in Table 1 of my full report. Summarizing those findings, in addition to consistently experiencing the highest yearly incidence rates for 2000-2022 (Figures 2a and 2b in my report), **the American Indian/Alaska Native (AI/AN) population likewise experienced the greatest rise in incidence** for the same period, with its linear model having a slope of 0.14 (Table 1).
 
 #### **Yearly Incidence (per 100,000) by Age Group (2000-2022)**
 
@@ -179,11 +183,15 @@ plot_ly(age,
         type = "scatter", 
         mode = "lines", 
         line = list(width = 4),
-        colors = c("#ff9796", "#db626a", "#a91741", "#670b34", "#625856","#44302a", "#090707")) |>
+        colors = c("#d2916f", "#e9c09e", "#c0bd51", "#7f9041", "#598398", "#244260", "#5b5683", "#a39fc6")) |>
   layout(
     xaxis = list(title = "Year"),
     yaxis = list(title = "Incidence Rate"))
 ```
+
+This figure also displays annual incidence rates for acute HCV in the United States from 2000 to 2022, only across age groups. Of the seven groups included in this project, the 25-34 year old group has seen the highest incidence rates, followed closely by the 35-44 year old group. Similarly to incidence rates across racial/ethnic groups, most groups have seen a steady increase in rates from 2010 onwards. The only groups to have not experienced this trend are the 15-24 year old group (has experienced a decrease in rates from 2018 onwards), and the 0-14 year old group (almost no change over the period of interest).
+
+Summarizing findings from Table 2 in my full report, **the 25-34 year-old group experienced the greatest rise in incidence for the period of interest** (slope = 0.15, Table 2).
 
 #### **Yearly Incidence (per 100,000) by Sex (2000-2022)**
 
@@ -196,11 +204,15 @@ plot_ly(sex,
         type = "scatter", 
         mode = "lines", 
         line = list(width = 4),
-        colors = c("#ff9796", "#a91741")) |>
+        colors = c("#598398", "#244260")) |>
   layout(
     xaxis = list(title = "Year"),
     yaxis = list(title = "Incidence Rate"))
 ```
+
+Finally, the above figure displays annual incidence rates for acute HCV in the United States from 2000 to 2022 across sexes. As with racial/ethnic and age groups, both sexes have seen a consistent rise in incidence rates from 2005 onwards, following a steady decrease from 2000 to 2005. However, males have seen significantly higher rates than females for the majority of the period of interest, with a rate double that of the latter group in 2022.
+
+Summarizing findings from my full report, **males have seen the greatest rise in incidence of the two sexes included in this analysis, with a slope of 0.07** (Table 3). The female group, on the other hand, saw an overall rise slightly more than half of what the male group experienced, with a slope of 0.04.
 
 #### **Incidence Rates by U.S. State (2022)**
 
@@ -218,8 +230,8 @@ state_map <- plot_geo(state, locationmode = 'USA-states') |>
     color = ~incidence, 
     colorscale = list(
       list(0, "white"),
-      list(0.01, "#ff9796"),
-      list(1, "#a91741")),
+      list(0.01, "#598398"),
+      list(1, "#244260")),
     showscale = TRUE) |> 
   layout(
     geo = list(
@@ -237,4 +249,4 @@ state_map <- plot_geo(state, locationmode = 'USA-states') |>
 state_map
 ```
 
-### Conclusion and Summary
+This figure (not included in my analysis) displays total incidence rates of acute HCV across U.S. States for 2022, with darker colors indicating higher rates and the opposite for lighter colors. However, states displaying a white color with an incidence rate of (-1) did not have incidence data available for 2022, and were thus coded as such to allow for display in the figure. The state with the highest incidence rate for 2022 was Maine (6.8 cases per 100,000 population), whereas the state with the lowest incidence rates for the same year was South Carolina (0.001 cases per 100,000 population).

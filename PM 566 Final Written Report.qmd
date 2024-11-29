@@ -102,12 +102,12 @@ library(tidyr)
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Read in Data
-estimated <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
-race <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Race_Data.csv", header = TRUE, sep = ",")
-age <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Age_Data.csv", header = TRUE, sep = ",")
-sex <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Sex_Data.csv", header = TRUE, sep = ",")
-state <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/2022_State_Rates.csv", header = TRUE, sep = ",")
-urbanicity <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Urbanicity_Data.csv", header = TRUE, sep = ",")
+estimated <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("/Users/danagonzalez/Desktop/PM 566/PM566-Final-Project/Data/Urbanicity_Data.csv", header = TRUE, sep = ",")
 ```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
