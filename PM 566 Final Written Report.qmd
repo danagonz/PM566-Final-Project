@@ -35,12 +35,13 @@ Due to the asymptomatic nature of acute HCV, the true burden of this disease is 
     -   Other
     -   Unknown
 -   **Age Groups:**
-    -   0-19 years
-    -   20-29 years
-    -   30-39 years
-    -   40-49 years
-    -   50-59 years
-    -   ≥60 years
+    -   0-14 years
+    -   15-24 years
+    -   25-34 years
+    -   35-44 years
+    -   45-54 years
+    -   55-64 years
+    -   65+ years
 -   **Sex:**
     -   Male
     -   Female
@@ -101,12 +102,12 @@ library(tidyr)
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # Read in Data
-estimated <- read.table("~/Downloads/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
-race <- read.table("~/Downloads/Race_Data.csv", header = TRUE, sep = ",")
-age <- read.table("~/Downloads/Age_Data.csv", header = TRUE, sep = ",")
-sex <- read.table("~/Downloads/Sex_Data.csv", header = TRUE, sep = ",")
-state <- read.table("~/Downloads/2022_State_Rates.csv", header = TRUE, sep = ",")
-urbanicity <- read.table("~/Downloads/Urbanicity_Data.csv", header = TRUE, sep = ",")
+estimated <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Reported_vs_Estimated.csv", header = TRUE, sep = ",")
+race <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Race_Data.csv", header = TRUE, sep = ",")
+age <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Age_Data.csv", header = TRUE, sep = ",")
+sex <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Sex_Data.csv", header = TRUE, sep = ",")
+state <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/2022_State_Rates.csv", header = TRUE, sep = ",")
+urbanicity <- read.table("~/Desktop/PM 566/PM566-Final-Project/Data/Urbanicity_Data.csv", header = TRUE, sep = ",")
 ```
 
 ```{r, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -217,7 +218,7 @@ ggplot(estimated, aes(x = Year)) +
   geom_col(aes(y = Reported, fill = "Reported"), position = "dodge") + 
   labs(x = "Year",
        y = "Count") +
-  scale_fill_manual(values = c("Reported" = "#a91741", "Estimated" = "#ff9796")) +
+  scale_fill_manual(values = c("Reported" = "#244260", "Estimated" = "#598398")) +
   scale_y_continuous(n.breaks = 14) +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face="bold"),
@@ -243,7 +244,7 @@ ggplot(data = race) +
   labs(x = "Year",
        y = "Incidence Rate",
        color = "Racial/Ethnic Group") +
-  scale_color_moma_d("Althoff") +
+  scale_color_moma_d("Rattner") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
@@ -277,7 +278,7 @@ race|>
     x = "Year",
     y = "Incidence Rate",
     color = "Group:", size = 12) +
-  scale_color_moma_d("Althoff") +
+  scale_color_moma_d("Rattner") +
   theme_minimal() +
   theme(
     axis.text.x = element_text(vjust = 0.5),
@@ -310,15 +311,7 @@ ggplot(data = age) +
   labs(x = "Year",
        y = "Incidence Rate",
        color = "Age Group") +
-  scale_color_manual(values = c(
-    "0-14" = "#ff9796",
-    "15-24" = "#db626a",
-    "25-34" = "#a91741",
-    "35-44" = "#670b34",
-    "45-54" = "#625856",
-    "55-64" = "#44302a",
-    "65+" = "#090707"
-    )) +
+  scale_color_moma_d("Rattner") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
@@ -352,7 +345,7 @@ age|>
     x = "Year",
     y = "Incidence Rate",
     color = "Group:", size = 12) +
-  scale_color_moma_d("Althoff") +
+  scale_color_moma_d("Rattner") +
   theme_minimal() +
   theme(
     axis.text.x = element_text(vjust = 0.5),
@@ -385,7 +378,7 @@ ggplot(data = sex) +
   labs(x = "Year",
        y = "Incidence Rate",
        color = "Sex") +
-  scale_color_manual(values = c("Male" = "#a91741", "Female" = "#ff9796")) +
+  scale_color_manual(values = c("Male" = "#244260", "Female" = "#598398")) +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
@@ -419,7 +412,7 @@ sex|>
     x = "Year",
     y = "Incidence Rate",
     color = "Group:", size = 12) +
-  scale_color_moma_d("Althoff") +
+  scale_color_manual(values = c("Male" = "#244260", "Female" = "#598398")) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(vjust = 0.5),
@@ -452,7 +445,7 @@ ggplot(data = urbanicity) +
   labs(x = "Year",
        y = "Incidence Rate",
        color = "Urbanicity") +
-  scale_color_manual(values = c("Rural" = "#a91741", "Urban" = "#ff9796")) +
+  scale_color_manual(values = c("Rural" = "#244260", "Urban" = "#598398")) +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
         axis.title.x = element_text(face = "bold"),
@@ -486,7 +479,7 @@ urbanicity|>
     x = "Year",
     y = "Incidence Rate",
     color = "Area:", size = 12) +
-  scale_color_moma_d("Althoff") +
+  scale_color_manual(values = c("Rural" = "#244260", "Urban" = "#598398")) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(vjust = 0.5),
@@ -518,11 +511,11 @@ In addition to consistently experiencing the highest yearly incidence rates for 
 
 The White group similarly had the second highest yearly incidence, as well as the second greatest rise with a slope of 0.07. Both the Black/African American and Hispanic/Latino groups experienced a rise of 0.03, although yearly incidence was consistently higher for the former group between 2000-2022. Finally, the Asian/Pacific Islander group experienced the lowest yearly incidence rates as well as the smallest rise over the period of interest (slope = 0.01).
 
-Similarly, **the 25-34 year-old group experienced the greatest rise in incidence for the period of interest (slope = 0.15, Table 1)**, as well as the greatest yearly incidence rates for the same period (Figures 3a and 3b).
+Similarly, **the 25-34 year-old group experienced the greatest rise in incidence for the period of interest** (slope = 0.15, Table 2), as well as the greatest yearly incidence rates for the same period (Figures 3a and 3b).
 
 The second greatest rise in incidence was observed with the 35-44 year-old group (slope = 0.09) which likewise had the second greatest incidence rates over the period 2000-2022. The 15-24, 45-54, and 55-64 year-old groups all demonstrated similar rises incidence (slope = 0.04 for all). The 65+ year-old group experienced the second smallest rise, with a slope of 0.02. Finally, in addition to having the lowest yearly incidence rates over the period of interest, the 0-14 year-old group has seen almost no change in incidence, resulting in a slope of 0.0.
 
-Finally, **males have seen the greatest rise in incidence of the two sexes included in this analysis, with a slope of 0.07.** Males similarly saw the greatest yearly incidence rates of the two groups. The female group, on the other hand, saw an overall rise of nearly half of what the male group experienced, with a slope of 0.04.
+Finally, **males have seen the greatest rise in incidence of the two sexes included in this analysis, with a slope of 0.07** (Table 3). Males similarly saw the greatest yearly incidence rates of the two groups (Figures 4a and 4b). The female group, on the other hand, saw an overall rise slightly more than half of what the male group experienced, with a slope of 0.04.
 
 As alluded to in the introduction, injection drug use (IDU) is now identified as the primary risk factor for acute HCV infection. The association between this risk factor and HCV transmission has been particularly notable for the nation's AI/AN population. Although limited, ongoing literature partially attributes this disparity to the impact of generational trauma on engagement with high-risk behaviors, like IDU. Settler colonialism, forced assimilation and relocation policies, and ongoing social marginalization and cultural loss have all contributed to lesser health outcomes, like disproportionately higher HCV incidence rates, for this group. Further, historical trauma has led to decreased engagement with and distrust in healthcare, impacting this group’s ability to access appropriate screening and treatment resources.
 
